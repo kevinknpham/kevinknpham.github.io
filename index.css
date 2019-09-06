@@ -1,0 +1,174 @@
+/*
+Kevin Pham
+CSS file for use with index.html.  Provides style for a professional website
+including layout and animations/transitions.
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Share+Tech|Space+Mono&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*==========Fonts==========*/
+
+h1, h2, h3, nav a {
+    font-family: 'Share Tech', sans-serif;
+}
+
+code, p, ul {
+    font-family: 'Space Mono', monospace;
+}
+
+/*==========Header==========*/
+
+header {
+    background: #444444;
+    margin: 0;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+h1 {
+    margin: 0 0 0 20px;
+    width: 20%;
+    background: white;
+    border: solid 5px #00fbdd;
+    font-size: 20pt;
+    text-align: center;
+}
+
+nav {
+    margin: 0 20px;
+    padding: 0;
+    width: 40%;
+    display: flex;
+    justify-content: end;
+}
+
+nav a {
+    display: block;
+    width: 25%;
+    margin: 0;
+    background: transparent;
+    color: white;
+    font-size: 15pt;
+    text-decoration: none;
+    line-height: 30pt;
+    text-align: center;
+    transition: all 500ms;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    background: #222222;
+}
+
+/*==========Sections==========*/
+
+.section {
+    padding-top: 5vh;
+}
+
+.section hr {
+    width: 300px;
+    text-align: left;
+    margin-left: 25px;
+    border: 4px dashed black;
+    border-style: none none dashed;
+}
+
+.section h2, .section h3 {
+    font-size: 30pt;
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+
+/*==========Intro==========*/
+
+#intro {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#terminal {
+    height: 86vh;
+    width: 96vw;
+    background: black;
+    padding: 5px;
+}
+
+#terminal .pic-wrap-circle {
+    height: 40vh;
+    width: 40vh;
+    position: absolute;
+    right: 5vw;
+    bottom: 10vh;
+}
+
+#terminal code {
+    color: #00b628;
+    font-size: 30pt;
+}
+
+/*==========Background==========*/
+
+#background {
+    background: #00b2ff;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#background-left {
+    width: 65%;
+}
+
+#background-left p {
+    padding-left: 30px;
+}
+
+#background-right {
+    width: 30%;
+}
+
+/*==========Skills==========*/
+
+
+
+/*==========Experience==========*/
+
+
+
+/*==========Projects==========*/
+
+
+
+/*==========Miscellaneous/JavaScript==========*/
+
+.pic-wrap-circle {
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.pic-wrap-circle img {
+    width: 100%;
+}
