@@ -158,7 +158,7 @@ nav a:hover {
 
 .skill-card {
     position: relative;
-    border: solid black 5px;
+    background: #ddd;
     margin: 0;
     padding: 10px;
     overflow: hidden;
@@ -168,7 +168,7 @@ nav a:hover {
 .skill-card > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .description {
@@ -179,6 +179,7 @@ nav a:hover {
     left: 0;
     transform: translatey(100%);
     transition: all 2s;
+    background: rgba(0, 150, 150, 0.7);
 }
 
 .skill-card:hover .description {
