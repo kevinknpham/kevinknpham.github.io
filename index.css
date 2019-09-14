@@ -213,10 +213,10 @@ nav a:hover {
 
 .experience-card {
     height: 30vh;
-    background: linear-gradient(133.31deg, #5383FF 10%, #00A368 50%, #5AB400 90%);
-    background-size: 140%;
+    background: linear-gradient(90deg, #2D68FF 0%, #00A368 40%);
+    background-size: 180%;
     background-position: 0 0;
-    /* transition: all 1s ease-in-out; */
+    transition: all 1s ease-in-out;
 }
 
 .experience-card:hover {
