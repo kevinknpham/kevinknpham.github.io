@@ -154,9 +154,11 @@ nav a:hover {
 #skills-container {
     display: grid;
     grid-template-columns: repeat(5, minmax(18%, 1fr));
+    grid-gap: 10px;
+    margin: 0 10px;
 }
 
-.skill-card {
+.card {
     position: relative;
     background: #ddd;
     margin: 0;
@@ -165,7 +167,7 @@ nav a:hover {
     height: 20vh;
 }
 
-.skill-card > img {
+.card > img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -178,11 +180,11 @@ nav a:hover {
     top: 0;
     left: 0;
     transform: translatey(100%);
-    transition: all 2s;
-    background: rgba(0, 150, 150, 0.7);
+    transition: all 1s ease-in-out;
+    background: rgba(0, 200, 100, 0.7);
 }
 
-.skill-card:hover .description {
+.card:hover .description {
     transform: translatey(0);
 }
 
