@@ -49,20 +49,28 @@ JS file used to populate index.html.
             img.src = image;
             img.alt = title;
             result.appendChild(img);
+
+            let desc = ce("div");
+            desc.classList.add("description");
+
+            let h3 = ce("h3");
+            h3.innerText = title;
+            desc.appendChild(h3);
+
+            let p = ce("p");
+            p.innerText = description;
+            desc.appendChild(p);
+
+            result.appendChild(desc);
+        }else {
+            let h3 = ce("h3");
+            h3.innerText = title;
+            result.appendChild(h3);
+
+            let p = ce("p");
+            p.innerText = description;
+            result.appendChild(p);
         }
-
-        let desc = ce("div");
-        desc.classList.add("description");
-
-        let h3 = ce("h3");
-        h3.innerText = title;
-        desc.appendChild(h3);
-
-        let p = ce("p");
-        p.innerText = description;
-        desc.appendChild(p);
-
-        result.appendChild(desc);
         return result;
     }
 

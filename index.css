@@ -226,6 +226,7 @@ nav a:hover {
 .experience-card h3 {
     margin: 0;
     padding: 0;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -246,6 +247,8 @@ nav a:hover {
     opacity: 0;
     position: absolute;
     text-align: center;
+    margin: 0;
+    padding: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
