@@ -30,7 +30,7 @@ const SKILLS = [
 
     {
         "title": "MySQL",
-        "description": "I learned and taught the basics of MySQL.  In addition, I've managed a small database using MySQL",
+        "description": "I learned and taught the basics of MySQL.  In addition, I've managed a small database using MySQL.",
         "image": "images/mysql.svg"
     }
 ];

@@ -131,10 +131,11 @@ nav a:hover {
 
 #background {
     background: #00b2ff;
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 #background-left {
@@ -149,22 +150,14 @@ nav a:hover {
     width: 30%;
 }
 
-/*==========Skills==========*/
-
-#skills-container {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(18%, 1fr));
-    grid-gap: 10px;
-    margin: 0 10px;
-}
+/*==========Card UI==========*/
 
 .card {
     position: relative;
     background: #ddd;
     margin: 0;
-    padding: 10px;
+    padding: 0;
     overflow: hidden;
-    height: 20vh;
 }
 
 .card > img {
@@ -174,23 +167,87 @@ nav a:hover {
 }
 
 .description {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transform: translatey(100%);
-    transition: all 1s ease-in-out;
-    background: rgba(0, 200, 100, 0.7);
 }
 
-.card:hover .description {
+/*==========Skills==========*/
+
+#skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(23%, 1fr));
+    grid-gap: 10px;
+    margin: 0 10px;
+}
+
+.skill-card {
+    height: 30vh;
+}
+
+.skill-card .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-in-out;
+    transform: translatey(100%);
+    background: rgba(0, 200, 100, 0.7);
+    height: 30vh;
+}
+
+.skill-card:hover .description {
     transform: translatey(0);
 }
 
 /*==========Experience==========*/
 
+#experience-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(49%, 1fr));
+    grid-gap: 10px;
+    margin: 0 10px;
+}
 
+.experience-card {
+    height: 30vh;
+    background: linear-gradient(133.31deg, #5383FF 10%, #00A368 50%, #5AB400 90%);
+    background-size: 140%;
+    background-position: 0 0;
+    /* transition: all 1s ease-in-out; */
+}
+
+.experience-card:hover {
+    background-size: 100%;
+}
+
+.experience-card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40pt;
+    text-align: center;
+    font-weight: bold;
+    transition: all 1s ease-in-out;
+    opacity: 1;
+}
+
+.experience-card:hover h3 {
+    top: 0;
+    opacity: 0;
+}
+
+.experience-card p {
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+}
+
+.experience-card:hover p {
+    opacity: 1;
+}
 
 /*==========Projects==========*/
 

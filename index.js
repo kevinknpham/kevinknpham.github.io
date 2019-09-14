@@ -15,6 +15,8 @@ JS file used to populate index.html.
      */
     function init() {
         loadCards("skill-card", id("skills-container"), SKILLS);
+        console.table(EXPERIENCES);
+        loadCards("experience-card", id("experience-container"), EXPERIENCES);
     }
 
     /**
@@ -25,7 +27,6 @@ JS file used to populate index.html.
      */
     function loadCards(type, parent, data) {
         for (let i = 0; i < data.length; i++) {
-            console.table(data[i]);
             parent.appendChild(generateCard(data[i], type));
         }
     }
@@ -38,13 +39,17 @@ JS file used to populate index.html.
      * @return {Object} - DOM for given data
      */
     function generateCard({title, description, image}, type) {
+        console.log(description);
         let result = ce("div");
         result.classList.add("card");
-
-        let img = ce("img");
-        img.src = image;
-        img.alt = title;
-        result.appendChild(img);
+        result.classList.add(type);
+        
+        if (image) {
+            let img = ce("img");
+            img.src = image;
+            img.alt = title;
+            result.appendChild(img);
+        }
 
         let desc = ce("div");
         desc.classList.add("description");
