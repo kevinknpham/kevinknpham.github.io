@@ -14,20 +14,21 @@ JS file used to populate index.html.
      * Function that populates the page when it is loaded
      */
     function init() {
-        loadCards("skill-card", id("skills-container"), SKILLS);
-        console.table(EXPERIENCES);
-        loadCards("experience-card", id("experience-container"), EXPERIENCES);
+        loadCards(generateSkillCard, id("skills-container"), SKILLS);
+        loadCards(generateExperienceCard, id("experience-container"), EXPERIENCES);
+        loadCards(generateProjectCard, id("project-container"), PROJECTS);
     }
 
     /**
      * Loads cards into the given parent element.
-     * @param {String} type - class to add to card
+     * @param {Function} creator - constructor for a single card
      * @param {Object} parent - DOM for container to hold the cards
      * @param {Object[]} data - Array where each element is an object with the name, description, and image for each card
      */
-    function loadCards(type, parent, data) {
+    function loadCards(creator, parent, data) {
         for (let i = 0; i < data.length; i++) {
-            parent.appendChild(generateCard(data[i], type));
+            console.log(creator(data[i]));
+            parent.appendChild(creator(data[i]));
         }
     }
 
@@ -38,39 +39,86 @@ JS file used to populate index.html.
      * @param {String} image - url for img of card
      * @return {Object} - DOM for given data
      */
-    function generateCard({title, description, image}, type) {
-        console.log(description);
+    function generateSkillCard({title, description, image}) {
         let result = ce("div");
         result.classList.add("card");
-        result.classList.add(type);
-        
-        if (image) {
-            let img = ce("img");
-            img.src = image;
-            img.alt = title;
-            result.appendChild(img);
+        result.classList.add("skill-card");
 
-            let desc = ce("div");
-            desc.classList.add("description");
+        let img = ce("img");
+        img.src = image;
+        img.alt = title;
+        result.appendChild(img);
 
-            let h3 = ce("h3");
-            h3.innerText = title;
-            desc.appendChild(h3);
+        let desc = ce("div");
+        desc.classList.add("description");
 
-            let p = ce("p");
-            p.innerText = description;
-            desc.appendChild(p);
+        let h3 = ce("h3");
+        h3.innerText = title;
+        desc.appendChild(h3);
 
-            result.appendChild(desc);
-        }else {
-            let h3 = ce("h3");
-            h3.innerText = title;
-            result.appendChild(h3);
+        let p = ce("p");
+        p.innerText = description;
+        desc.appendChild(p);
 
-            let p = ce("p");
-            p.innerText = description;
-            result.appendChild(p);
-        }
+        result.appendChild(desc);
+        return result;
+    }
+
+    /**
+     * Generates a single card's DOM for the experience section
+     * @param {String} title - title for card
+     * @param {String} description - description for paragraph on card
+     * @return {Object} - DOM for given data
+     */
+    function generateExperienceCard({title, description}) {
+        console.log("hi");
+        let result = ce("div");
+        result.classList.add("card");
+        result.classList.add("experience-card");
+
+        let h3 = ce("h3");
+        h3.innerText = title;
+        result.appendChild(h3);
+
+        let p = ce("p");
+        p.innerText = description;
+        result.appendChild(p);
+
+        return result;
+    }
+
+    /**
+     * Generates a single card's DOM for the projects section
+     * @param {String} title - title for card
+     * @param {String} description - description for paragraph on card
+     * @param {String} image - url for img of card
+     * @return {Object} - DOM for given data
+     */
+    function generateProjectCard({title, description, image, url}) {
+        let result = ce("div");
+        result.classList.add("card");
+        result.classList.add("project-card");
+
+        let img = ce("img");
+        img.src = image;
+        img.alt = title;
+        result.appendChild(img);
+
+        let desc = ce("div");
+        desc.classList.add("description");
+
+        let h3 = ce("h3");
+        let a = ce("a");
+        a.innerText = title;
+        a.href = url;
+        h3.appendChild(a);
+        desc.appendChild(h3);
+
+        let p = ce("p");
+        p.innerText = description;
+        desc.appendChild(p);
+
+        result.appendChild(desc);
         return result;
     }
 
