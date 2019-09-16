@@ -6,7 +6,12 @@ JS file used to populate index.html.
 (function() {
     "use strict";
 
+    const GREETING = "Hello World!\nMy name is Kevin.\nI like to code.\nWelcome to my website."
 
+    let greetingIndex = 0;
+    let greetingTextCurrent = "";
+    let typeTimer;
+    let cursorTimer;
 
     window.addEventListener("load", init);
 
@@ -17,6 +22,38 @@ JS file used to populate index.html.
         loadCards(generateSkillCard, id("skills-container"), SKILLS);
         loadCards(generateExperienceCard, id("experience-container"), EXPERIENCES);
         loadCards(generateProjectCard, id("project-container"), PROJECTS);
+        typeTimer = setInterval(startTerminalText, 200);
+        cursorTimer = setInterval(flashCursor, 300);
+    }
+
+    /**
+     * Toggles hidden state of cursor.
+     */
+    function flashCursor() {
+        id("cursor").classList.toggle("hidden");
+    }
+
+    /**
+     * Makes cursor stop and disappear.
+     */
+    function clearCursor() {
+        clearInterval(cursorTimer);
+        cursorTimer = null;
+        id("cursor").classList.add("hidden");
+    }
+
+    /**
+     * Displays message on the fake terminal on the page.
+     */
+    function startTerminalText() {
+        greetingTextCurrent += GREETING[greetingIndex];
+        id("typing-text").innerText = greetingTextCurrent;
+        greetingIndex++;
+        if (greetingIndex === GREETING.length) {
+            clearInterval(typeTimer);
+            typeTimer = null;
+            setTimeout(clearCursor, 10000);
+        }
     }
 
     /**
@@ -33,7 +70,7 @@ JS file used to populate index.html.
     }
 
     /**
-     * Generates a single card's DOM for the skills section
+     * Generates a single card's DOM for the skills section.
      * @param {String} title - title for card
      * @param {String} description - description for paragraph on card
      * @param {String} image - url for img of card
@@ -65,7 +102,7 @@ JS file used to populate index.html.
     }
 
     /**
-     * Generates a single card's DOM for the experience section
+     * Generates a single card's DOM for the experience section.
      * @param {String} title - title for card
      * @param {String} description - description for paragraph on card
      * @return {Object} - DOM for given data
@@ -88,7 +125,7 @@ JS file used to populate index.html.
     }
 
     /**
-     * Generates a single card's DOM for the projects section
+     * Generates a single card's DOM for the projects section.
      * @param {String} title - title for card
      * @param {String} description - description for paragraph on card
      * @param {String} image - url for img of card

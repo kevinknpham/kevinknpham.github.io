@@ -82,6 +82,7 @@ nav a:hover {
 
 .section {
     padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 .section hr {
@@ -163,11 +164,11 @@ nav a:hover {
 .card > img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
 }
 
 .description {
     width: 100%;
+    overflow: scroll;
 }
 
 /*==========Skills==========*/
@@ -181,6 +182,10 @@ nav a:hover {
 
 .skill-card {
     height: 30vh;
+}
+
+.skill-card > img {
+    object-fit: contain;
 }
 
 .skill-card .description {
@@ -199,6 +204,10 @@ nav a:hover {
 
 /*==========Experience==========*/
 
+#experience {
+    background: #0076CB;
+}
+
 #experience-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(49%, 1fr));
@@ -206,21 +215,17 @@ nav a:hover {
     margin: 0 10px;
 }
 
-.experience-card .description {
-    height: 100%;
-}
-
 .experience-card {
     height: 40vh;
-    background: linear-gradient(90deg, #2DCDFF 0%, #00A368 98.67%);
-    background-size: 180%;
+    background: #aaa;
     background-position: 0 0;
     transition: all 1s ease-in-out;
+    overflow: scroll;
 }
 
 .experience-card:hover {
-    background-size: 100%;
-}
+    background: rgba(0, 200, 100, 0.9);
+;}
 
 .experience-card h3 {
     margin: 0;
@@ -264,9 +269,17 @@ nav a:hover {
 
 #project-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(30%, 1fr));
+    grid-template-columns: repeat(2, minmax(30%, 1fr));
     grid-gap: 10px;
     margin: 0 10px;
+}
+
+.project-card {
+    box-shadow: 5px 5px #ddd;
+}
+
+.project-card > img {
+    object-fit: cover;
 }
 
 .project-card .description {
@@ -274,7 +287,7 @@ nav a:hover {
     top: 0;
     left: 0;
     transition: all 1s ease-in-out;
-    background: rgba(150, 200, 255, 0.9);
+    background: rgba(0, 200, 100, 0.9);
     height: 100%;
     clip-path: circle(0 at 50% 50%);
 }
@@ -298,7 +311,35 @@ nav a:hover {
 }
 
 .description a:hover {
-    text-shadow: 3px 3px aliceblue;
+    text-shadow: 3px 3px yellow;
+}
+
+/*==========Footer==========*/
+
+footer {
+    background: #555;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    height: auto;
+}
+
+#contacts {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.contact {
+    display: block;
+    overflow: hidden;
+    transition: all 1s;
+    border-radius: 50%;
+}
+
+.contact img {
+    height: 40px;
+    border-radius: 50%;
 }
 
 /*==========Miscellaneous/JavaScript==========*/
@@ -311,4 +352,8 @@ nav a:hover {
 
 .pic-wrap-circle img {
     width: 100%;
+}
+
+.hidden {
+    display: none;
 }
