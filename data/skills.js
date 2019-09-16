@@ -18,8 +18,14 @@ const SKILLS = [
 
     {
         "title": "JavaScript",
-        "description": "I learned JavaScript for web development and have taught it in class.  It is a powerful language that I've used in nearly all of my personal projects.",
+        "description": "I taught myself React and React Native over the summer of 2019 using online resources.  I currently am working on a few small projects using this framework and am excited to continue learning about React's capabilities.",
         "image": "images/skills/js.png"
+    },
+
+    {
+        "title": "React",
+        "description": "I learned JavaScript for web development and have taught it in class.  It is a powerful language that I've used in nearly all of my personal projects.",
+        "image": "images/skills/react.png"
     },
 
     {
