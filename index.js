@@ -64,7 +64,6 @@ JS file used to populate index.html.
      */
     function loadCards(creator, parent, data) {
         for (let i = 0; i < data.length; i++) {
-            console.log(creator(data[i]));
             parent.appendChild(creator(data[i]));
         }
     }
@@ -81,10 +80,12 @@ JS file used to populate index.html.
         result.classList.add("card");
         result.classList.add("skill-card");
 
-        let img = ce("img");
-        img.src = image;
-        img.alt = title;
-        result.appendChild(img);
+        result.style.backgroundImage = `url("${image}")`;
+
+        // let img = ce("img");
+        // img.src = image;
+        // img.alt = title;
+        // result.appendChild(img);
 
         let desc = ce("div");
         desc.classList.add("description");
@@ -108,7 +109,6 @@ JS file used to populate index.html.
      * @return {Object} - DOM for given data
      */
     function generateExperienceCard({title, description}) {
-        console.log("hi");
         let result = ce("div");
         result.classList.add("card");
         result.classList.add("experience-card");
@@ -136,10 +136,12 @@ JS file used to populate index.html.
         result.classList.add("card");
         result.classList.add("project-card");
 
-        let img = ce("img");
-        img.src = image;
-        img.alt = title;
-        result.appendChild(img);
+        result.style.backgroundImage = `url("${image}")`;
+
+        // let img = ce("img");
+        // img.src = image;
+        // img.alt = title;
+        // result.appendChild(img);
 
         let desc = ce("div");
         desc.classList.add("description");
