@@ -6,7 +6,9 @@ JS file used to populate index.html.
 (function() {
     "use strict";
 
-    const GREETING = "Hello World!\nMy name is Kevin.\nI like to code.\nWelcome to my website."
+    const GREETING = "Hello World!\nMy name is Kevin.\nI like to code.\nWelcome to my website.";
+    const TYPING_INTERVAL = 100;
+    const CURSOR_INTERVAL = 200;
 
     let greetingIndex = 0;
     let greetingTextCurrent = "";
@@ -22,8 +24,8 @@ JS file used to populate index.html.
         loadCards(generateSkillCard, id("skills-container"), SKILLS);
         loadCards(generateExperienceCard, id("experience-container"), EXPERIENCES);
         loadCards(generateProjectCard, id("project-container"), PROJECTS);
-        typeTimer = setInterval(startTerminalText, 200);
-        cursorTimer = setInterval(flashCursor, 300);
+        typeTimer = setInterval(startTerminalText, TYPING_INTERVAL);
+        cursorTimer = setInterval(flashCursor, CURSOR_INTERVAL);
     }
 
     /**
