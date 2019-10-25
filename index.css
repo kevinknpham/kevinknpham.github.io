@@ -59,7 +59,7 @@ nav {
     align-items: center;
 }
 
-nav a {
+.nav-btn {
     display: block;
     width: 25%;
     margin: 0;
@@ -72,12 +72,20 @@ nav a {
     transition: all 500ms;
 }
 
-nav a:visited {
+.nav-btn:visited {
     color: white;
 }
 
-nav a:hover {
+.nav-btn:hover {
     background: #222222;
+}
+
+#resume-download {
+    border: 5px solid #00fbdd;
+}
+
+#resume-download:hover {
+    background: #777;
 }
 
 /*==========Sections==========*/
